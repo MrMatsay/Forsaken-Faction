@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--<ScenarioDef>
+		<defName>ForsakenCrashlanded</defName>
+		<label>Abandoned Ones</label>
+		<description>Exiled and abandoned, you have been sent in cargo pods to another rimworld, now you have to survive on your own.</description>
+		<scenario>
+			<summary>Three Survivors - Exiled and abandoned</summary>
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>ForsakenPlayerColony</factionDef>
+			</playerFaction>
+			<parts>
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+					<def>ConfigurePawnsXenotypes</def>
+					<pawnChoiceCount>8</pawnChoiceCount>
+					<xenotypeCounts>
+						<li>
+							<requiredAtStart>True</requiredAtStart>
+							<xenotype>FO_Forsaken</xenotype>
+							<allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
+							<description>adult Forsakens</description>
+							<count>3</count>
+						</li>
+					</xenotypeCounts>
+					<overrideKinds>
+						<li>
+							<xenotype>FO_Forsaken</xenotype>
+							<pawnKind>Forsakens</pawnKind>
+						</li>
+					</overrideKinds>
+				</li>
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>DropPods</method>
+					<visible>false</visible>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Silver</thingDef>
+					<count>800</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MealSurvivalPack</thingDef>
+					<count>50</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MedicineIndustrial</thingDef>
+					<count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>ComponentIndustrial</thingDef>
+					<count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>FBow</thingDef>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>FSpear</thingDef>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>FBow</thingDef>
+				</li>
+				<li Class="ScenPart_StartingAnimal">
+					<def>StartingAnimal</def>
+					<animalKind>NightlingF</animalKind>
+					<count>1</count>
+					<bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>Steel</thingDef>
+					<count>450</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>WoodLog</thingDef>
+					<count>300</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsAnywhere">
+					<def>ScatterThingsAnywhere</def>
+					<thingDef>ShipChunk</thingDef>
+					<count>3</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsAnywhere">
+					<def>ScatterThingsAnywhere</def>
+					<thingDef>Steel</thingDef>
+					<count>720</count>
+				</li>
+			</parts>
+		</scenario>
+	</ScenarioDef>
+	<ScenarioDef>
+		<defName>LostForsakens</defName>
+		<label>Lost forsakens tribe</label>
+		<description>Your colony has been totally destroyed by roaming mechanoids and only 8 of you survived. Since you had to leave precipitately, you lost all recipes and gear you had.\n\nNote: Since you'll start poor, with no weapon, bad food and research slowly, this is a difficult scenario.</description>
+		<scenario>
+			<summary>Five lost forsakens attempt to rebuild. Difficult.</summary>
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>ForsakenPlayerColony</factionDef>
+			</playerFaction>
+			<parts>
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+					<def>ConfigurePawnsXenotypes</def>
+					<pawnChoiceCount>8</pawnChoiceCount>
+					<xenotypeCounts>
+						<li>
+							<requiredAtStart>True</requiredAtStart>
+							<xenotype>FO_Forsaken</xenotype>
+							<allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
+							<description>adult Forsakens</description>
+							<count>5</count>
+						</li>
+					</xenotypeCounts>
+					<overrideKinds>
+						<li>
+							<xenotype>FO_Forsaken</xenotype>
+							<pawnKind>Forsakens</pawnKind>
+						</li>
+					</overrideKinds>
+				</li>
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>Standing</method>
+				</li>
+				<li Class="ScenPart_ForcedHediff">
+					<def>ForcedHediff</def>
+					<visible>false</visible>
+					<context>PlayerStarter</context>
+					<chance>0.5</chance>
+					<hediff>Malnutrition</hediff>
+					<severityRange>
+						<min>0.2</min>
+						<max>0.4</max>
+					</severityRange>
+				</li>
+				<li Class="ScenPart_SetNeedLevel">
+					<def>SetNeedLevel</def>
+					<visible>false</visible>
+					<context>PlayerStarter</context>
+					<chance>1.0</chance>
+					<need>Food</need>
+					<levelRange>
+						<min>0</min>
+						<max>0.1</max>
+					</levelRange>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Silver</thingDef>
+					<count>200</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Pemmican</thingDef>
+					<count>400</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MedicineHerbal</thingDef>
+					<count>20</count>
+				</li>
+				<li Class="ScenPart_StartingAnimal">
+					<def>StartingAnimal</def>
+					<animalKind>NightlingF</animalKind>
+					<count>1</count>
+					<bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>WoodLog</thingDef>
+					<count>500</count>
+				</li>
+				<li Class="ScenPart_GameStartDialog">
+					<def>GameStartDialog</def>
+					<text>Your colony has been totally destroyed by roaming mechanoids and only 8 of you survived. You now must build a new home in the wilderness, like your ancestors did.</text>
+					<closeSound>GameStartSting</closeSound>
+				</li>
+			</parts>
+		</scenario>
+	</ScenarioDef>-->
+</Defs>

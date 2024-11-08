@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef Name="ResourceBaseStikehr" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<label>unspecified resource</label>
+		<category>Item</category>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>75</stackLimit>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<rotatable>false</rotatable>
+		<pathCost>15</pathCost>
+	</ThingDef>
+	<ThingDef Abstract="True" Name="PlantFoodStikehrBase" ParentName="ResourceBaseStikehr">
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>10</DeteriorationRate>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<ingestible>
+			<preferability>RawBad</preferability>
+			<tasteThought>AteRawFood</tasteThought>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>RawVegetable_Eat</ingestSound>
+		</ingestible>
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+		<comps>
+			<li Class="CompProperties_FoodPoisonable"/>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="PlantFoodStikehrBase">
+		<defName>RawStikehr</defName>
+		<label>Stikehr</label>
+		<description>An alien plant that can be used as a meat substitute.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Stikehr/Stikehr</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.3</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>10</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<ingestible>
+			<preferability>RawTasty</preferability>
+			<tasteThought/>
+			<foodType>VegetableOrFruit</foodType>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>RawVegetable_Eat</ingestSound>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="RoughPlantBase">
+		<defName>RagadastFruit</defName>
+		<label>Ragadast fruits</label>
+		<description>Raw radagast fruit</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Ragadast/Ragadast</texPath>
+		</graphicData>
+		<statBases>
+			<Flammability>1.3</Flammability>
+			<MarketValue>1.0</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>40</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<thingCategories>
+			<li>PlantMatter</li>
+		</thingCategories>
+		<ingestible>
+			<preferability>DesperateOnly</preferability>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="PlantFoodRawBase">
+		<defName>FOF_UltraviolettFruit</defName>
+		<label>ultraviolett</label>
+		<description>A nourishing fruit cultivated by forskakens on planets with a harsh environment.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Ultraviolett/Ultraviolett</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.5</MarketValue>
+		</statBases>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+		</ingestible>
+	</ThingDef>
+</Defs>

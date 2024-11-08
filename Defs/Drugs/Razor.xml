@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugPillBase">
+		<defName>FOF_Razor</defName>
+		<label>razor</label>
+		<description>A synthetic combat-enhancing drug developed by Forsakens to counter their weaknesses in combat. These pills reduce pain, slightly increase vision and blood pumping, and improve the user's metabolism. While they aren't addictive, the effect wears off rapidly.</description>
+		<graphicData>
+			<texPath>Drugs/Razor</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>22</MarketValue>
+			<Mass>0.005</Mass>
+			<Flammability>0.7</Flammability>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Hard</drugCategory>
+			<foodType>Processed</foodType>
+			<baseIngestTicks>50</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<ingestCommandString>Take {0}</ingestCommandString>
+			<ingestReportString>Taking {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>FOF_RazorHigh</hediffDef>
+					<severity>1.0</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MedicineProduction</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>3</Neutroamine>
+			<RagadastFruit>20</RagadastFruit>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>200</listOrder>
+				<overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+				<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="ForsakenFaction.ForsakenKnowledgeExtension"/>
+		</modExtensions>
+	</ThingDef>
+</Defs>

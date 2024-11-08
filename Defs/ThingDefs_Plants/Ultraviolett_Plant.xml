@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="PlantBase">
+		<defName>FOF_PlantUltraviolett</defName>
+		<label>ultraviolett plant</label>
+		<description>A small alien plant with an unique pollen. It reacts with the nervesystem on contact and makes humanoids feel comfortable and chilled. It can be very dangerous to smaller fauna tho, since it lures its victims into its net, should it ever miss any nutrients. This plant grows slowly, but can do so even outside the ideal temperature range. It will still die in freezing conditions.</description>
+		<thingClass>ForsakenFaction.Ultraviolett</thingClass>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Nutrition>0.4</Nutrition>
+		</statBases>
+		<graphicData>
+			<texPath>Plants/Ultraviolett</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<selectable>true</selectable>
+		<pathCost>14</pathCost>
+		<ingestible/>
+		<plant>
+			<!--<sowResearchPrerequisites>
+				<li>FO_Plants</li>
+			</sowResearchPrerequisites>-->
+			<fertilityMin>0.70</fertilityMin>
+			<dieIfLeafless>true</dieIfLeafless>
+			<harvestTag>Standard</harvestTag>
+			<harvestedThingDef>FOF_UltraviolettFruit</harvestedThingDef>
+			<harvestYield>10</harvestYield>
+			<harvestWork>250</harvestWork>
+			<sowMinSkill>8</sowMinSkill>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<topWindExposure>0.35</topWindExposure>
+			<growDays>18.6</growDays>
+			<visualSizeRange>0.3~1.2</visualSizeRange>
+			<wildOrder>2</wildOrder>
+			<purpose>Food</purpose>
+			<humanFoodPlant>true</humanFoodPlant>
+		</plant>
+		<modExtensions>
+			<li Class="ForsakenFaction.ForsakenKnowledgeExtension"/>
+		</modExtensions>
+	</ThingDef>
+</Defs>

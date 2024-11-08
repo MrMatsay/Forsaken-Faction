@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RulePackDef>
+		<defName>NamerForsakens</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[Forsaken]</li>
+			</rulesStrings>
+			<rulesFiles>
+				<li>Forsaken->NameBanks/Names_Forsakens</li>
+			</rulesFiles>
+		</rulePack>
+	</RulePackDef>
+</Defs>

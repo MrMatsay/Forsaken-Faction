@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ThingDef ParentName="RockBase">
+		<defName>FOF_MineableKaleidos</defName>
+		<label>compacted kaleidos</label>
+		<description>The remains of some ancient, collapsed structure. Rich in bizarre crystals, which save light inside. Its said, that Forsaken use this to manufacture a powerful combat drug, but the recipe is an unspoken secret.</description>
+		<graphicData>
+			<texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<color>(114,92,83)</color>
+			<colorTwo>(17,74,111)</colorTwo>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+		</statBases>
+		<building>
+			<isResourceRock>true</isResourceRock>
+			<mineableThing>FOF_KaleidosCrystal</mineableThing>
+			<mineableYield>9</mineableYield>
+			<mineableScatterCommonality>0.2</mineableScatterCommonality>
+			<mineableScatterLumpSizeRange>15~25</mineableScatterLumpSizeRange>
+		</building>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>FOF_KaleidosCrystal</defName>
+		<label>kaleidos crystal</label>
+		<description>Kaleidos crystal, used to make vitamin f.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Kaleidos</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.9</MarketValue>
+			<Mass>0.5</Mass>
+		</statBases>
+		<useHitPoints>false</useHitPoints>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<deepCommonality>2</deepCommonality>
+		<deepCountPerPortion>16</deepCountPerPortion>
+		<deepLumpSizeRange>10~12</deepLumpSizeRange>
+	</ThingDef>
+</Defs>

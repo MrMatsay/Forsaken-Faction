@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<CultureDef>
+		<defName>FOF_Syndicarian</defName>
+		<label>syndicarian</label>
+		<description>An ancient culture originating from outer space, common among the forsakens.</description>
+		<ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoAstropolitan</ideoNameMaker>
+		<deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">FOF_NamerDeity</deityNameMaker>
+		<deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerAstropolitan</deityTypeMaker>
+		<leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LeaderTitleMaker_Astropolitan</leaderTitleMaker>
+		<festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalAstropolitan</festivalNameMaker>
+		<allowedPlaceTags>
+			<li>OriginSpacer</li>
+		</allowedPlaceTags>
+		<iconPath>Syndicarian</iconPath>
+		<preferredWeaponClasses>
+			<noble>Ultratech</noble>
+			<despised>Neolithic</despised>
+		</preferredWeaponClasses>
+		<styleItemTags>
+			<li>
+				<tag>Urban</tag>
+				<baseWeight>1</baseWeight>
+				<weightFactor>1</weightFactor>
+			</li>
+			<li>
+				<tag>NoBeard</tag>
+				<baseWeight>10</baseWeight>
+				<weightFactor>1</weightFactor>
+			</li>
+			<li>
+				<tag>BeardRural</tag>
+				<baseWeight>0.1</baseWeight>
+				<weightFactor>1</weightFactor>
+			</li>
+			<li>
+				<tag>BeardUrban</tag>
+				<baseWeight>0.1</baseWeight>
+				<weightFactor>1</weightFactor>
+			</li>
+			<li>
+				<tag>NoTattoo</tag>
+				<baseWeight>1</baseWeight>
+				<weightFactor>1</weightFactor>
+			</li>
+		</styleItemTags>
+	</CultureDef>
+	<RulePackDef MayRequire="Ludeon.RimWorld.Ideology">
+		<defName>FOF_NamerDeity</defName>
+		<include>
+			<li>NamerDeityGlobal</li>
+		</include>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[syl][end]</li>
+				<li>name->[syl]'[end]</li>
+				<li>syl->[Forsaken]</li>
+				<li>end->ox</li>
+				<li>end->vix</li>
+				<li>end->oze</li>
+				<li>end->ozzle</li>
+				<li>end->burn</li>
+				<li>end->shank</li>
+				<li>end->wug</li>
+			</rulesStrings>
+			<rulesFiles>
+				<li>Forsaken->NameBanks/Names_Forsaken</li>
+			</rulesFiles>
+		</rulePack>
+	</RulePackDef>
+</Defs>

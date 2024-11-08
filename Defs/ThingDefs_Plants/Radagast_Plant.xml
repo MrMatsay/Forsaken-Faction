@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="PlantBase">
+		<defName>FOF_PlantRagadast</defName>
+		<label>Ragadast</label>
+		<description>Alien plant that grows fruit. Those fruit shouldn't be eaten, but are used by Forsakens for drugs manufactoring. Must be handled carefully, as it's highly flammable.</description>
+		<altitudeLayer>LowPlant</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>105</MaxHitPoints>
+			<Nutrition>0.2</Nutrition>
+			<Flammability>1.5</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Plants/Radagast</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<uiIconPath>Plants/Plant_Radagast_Ico</uiIconPath>
+		<selectable>true</selectable>
+		<pathCost>10</pathCost>
+		<ingestible/>
+		<plant>
+			<!--<sowResearchPrerequisites>
+				<li>FO_Plants</li>
+			</sowResearchPrerequisites>-->
+			<growDays>12</growDays>
+			<harvestTag>Standard</harvestTag>
+			<harvestedThingDef>RagadastFruit</harvestedThingDef>
+			<harvestYield>20</harvestYield>
+			<harvestWork>250</harvestWork>
+			<fertilitySensitivity>0.4</fertilitySensitivity>
+			<dieIfLeafless>true</dieIfLeafless>
+			<sowWork>350</sowWork>
+			<sowMinSkill>8</sowMinSkill>
+			<sowTags>
+				<li>Ground</li>
+				<li>Hydroponic</li>
+			</sowTags>
+			<topWindExposure>0.1</topWindExposure>
+			<visualSizeRange>0.3~1.50</visualSizeRange>
+			<wildOrder>2</wildOrder>
+			<purpose>Food</purpose>
+			<humanFoodPlant>true</humanFoodPlant>
+		</plant>
+		<modExtensions>
+			<li Class="ForsakenFaction.ForsakenKnowledgeExtension"/>
+		</modExtensions>
+	</ThingDef>
+</Defs>
