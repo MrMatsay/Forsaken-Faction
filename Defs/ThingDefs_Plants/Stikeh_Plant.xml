@@ -40,7 +40,7 @@
 	</ThingDef>
 	<ThingDef ParentName="PlantBaseStikehrR">
 		<defName>PlantStikehr</defName>
-		<label>Stikehr</label>
+		<label>stikehr</label>
 		<description>Tasty, protein-rich, alien mushroom that can be used as meat-substitute. This plant grows only in dark environments.</description>
 		<statBases>
 			<Beauty>-5</Beauty>

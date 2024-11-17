@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Alpha Genes scenario faction patch -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ScenarioDef[defName="AG_ForsakenCrashlanded"]/scenario/playerFaction/factionDef</xpath>
+		<value>
+			<factionDef>ForsakenPlayerColony</factionDef>
+		</value>
+	</Operation>
+	<!-- Royalty compat patch -->
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
+			<value>
+				<li>ForsakenPlayerColony</li>
+			</value>
+		</match>
+	</Operation>
+	<!-- Alpha Biomes compat patch -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Biomes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- Wild ragadast from Alpha Biomes use our own version of the fruit -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_WildRadagast"]/plant/harvestedThingDef</xpath>
+					<value>
+						<harvestedThingDef>RagadastFruit</harvestedThingDef>
+					</value>
+				</li>
+				<!-- Remove Alpha Biomes' version to avoid duplicates -->
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="AB_RawRagadast"]</xpath>
+				</li>
+				<!-- Restrict the Forsaken faction to lore-appropriate biomes -->
+				<!--<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/FactionDef[defName = "Forsaken"]</xpath>
+					<value>
+						<li Class="VFECore.FactionDefExtension">			
+							<allowedBiomes>
+								<li>AB_RockyCrags</li>
+							</allowedBiomes>			
+						</li>
+					</value>
+				</li>-->
+				<!--Make Gamma plants darklight so they can enjoy their own biome-->
+				<!--<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_GiantGamma"]/comps/li[@Class="CompProperties_Glower"]/glowColor</xpath>
+					<value>
+						<glowColor>(78, 226, 229, 0)</glowColor>
+					</value>
+				</li>-->
+			</operations>
+		</match>
+	</Operation>
+</Patch>

@@ -2,8 +2,8 @@
 <Defs>
 	<ThingDef ParentName="PlantBase">
 		<defName>FOF_PlantRagadast</defName>
-		<label>Ragadast</label>
-		<description>Alien plant that grows fruit. Those fruit shouldn't be eaten, but are used by Forsakens for drugs manufactoring. Must be handled carefully, as it's highly flammable.</description>
+		<label>ragadast</label>
+		<description>Alien plant that grows fruit. Those fruits are naturally poisonous and shouldn't be eaten raw; they are however used by the Forsaken for drugs manufactoring. Must be handled carefully, as it's highly flammable.</description>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<statBases>
 			<MaxHitPoints>105</MaxHitPoints>
