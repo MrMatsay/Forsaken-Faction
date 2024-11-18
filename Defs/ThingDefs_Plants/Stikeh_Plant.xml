@@ -41,7 +41,7 @@
 	<ThingDef ParentName="PlantBaseStikehrR">
 		<defName>PlantStikehr</defName>
 		<label>stikehr</label>
-		<description>Tasty, protein-rich, alien mushroom that can be used as meat-substitute. This plant grows only in dark environments.</description>
+		<description>Tasty, protein-rich, alien mushroom that can be used as meat-substitute. This plant grows only in dark environments. Only colonists with the Forsaken Knowledge gene will be able to sow this plant.</description>
 		<statBases>
 			<Beauty>-5</Beauty>
 			<Nutrition>0.5</Nutrition>

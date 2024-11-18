@@ -3,7 +3,7 @@
 	<ThingDef ParentName="PlantBase">
 		<defName>FOF_PlantRagadast</defName>
 		<label>ragadast</label>
-		<description>Alien plant that grows fruit. Those fruits are naturally poisonous and shouldn't be eaten raw; they are however used by the Forsaken for drugs manufactoring. Must be handled carefully, as it's highly flammable.</description>
+		<description>Alien plant that grows fruit. Those fruits are naturally poisonous and shouldn't be eaten raw; they are however used by the Forsaken for drugs manufactoring. Must be handled carefully, as it's highly flammable. Only colonists with the Forsaken Knowledge gene will be able to sow this plant.</description>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<statBases>
 			<MaxHitPoints>105</MaxHitPoints>

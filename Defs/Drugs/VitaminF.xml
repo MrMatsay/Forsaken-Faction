@@ -3,7 +3,7 @@
 	<ThingDef ParentName="MakeableDrugBase">
 		<defName>FOF_Vitaminf</defName>
 		<label>vitamin f</label>
-		<description>A synthetic combat-enhancing drug developed by Forsakens to counter their weaknesses in combat. These pills reduce pain, while slightly increasing consciousness, breathing and manipulation. While they aren't addictive, the effect wears off rapidly.</description>
+		<description>A synthetic combat-enhancing drug developed by Forsakens to counter their weaknesses in combat. These pills reduce pain, while slightly increasing consciousness, breathing and manipulation. While they aren't addictive, the effect wears off rapidly. Only colonists with the Forsaken Knowledge gene will be able to synthetize this drug.</description>
 		<graphicData>
 			<texPath>Drugs/VitaminF</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>

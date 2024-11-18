@@ -5,8 +5,8 @@
 		<xpath>/Defs/ThingDef[@Name="AG_BaseForsaken"]/thingCategories</xpath>
 		<value>
 			<thingCategories>
-			<li>FOF_ForsakenWeapons</li>
-		</thingCategories>
+				<li>FOF_ForsakenWeapons</li>
+			</thingCategories>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -19,37 +19,6 @@
 		<xpath>/Defs/ThingDef[@Name="AG_ArmorBaseForsaken"]/thingCategories</xpath>
 	</Operation>
 	<!-- Adding trade tags to Forsaken gear -->
-	<!--<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[
-			defName="AG_ForsakenSniper" or
-			defName="AG_ForsakenShotgun" or
-			defName="AG_ForsakenAssaultRifle" or
-			defName="AG_ForsakenLongBlade" or
-			defName="AG_ForsakenBattleAxe" or
-			defName="AG_ForsakenBulkSword" or
-			defName="AG_ForsakenSpear" or
-			defName="AG_ForsakenBow"
-		]</xpath>
-		<value>
-			<tradeTags>
-				<li>ForsakenWeapons</li>
-			</tradeTags>
-		</value>
-	</Operation>-->
-	<!--<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[
-			defName="AG_Forsaken_Hood" or
-			defName="AG_ForsakenCloak" or
-			defName="AG_ForsakenMarineHelmet" or
-			defName="AG_ForsakenMarineHelmetPsy" or
-			defName="AG_ForsakenMarineArmor"
-		]</xpath>
-		<value>
-			<tradeTags>
-				<li>ForsakenGear</li>
-			</tradeTags>
-		</value>
-	</Operation>-->
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[@Name="AG_BaseForsaken"]</xpath>
 		<value>
@@ -113,13 +82,6 @@
 								<li>AB_RockyCrags</li>
 							</allowedBiomes>			
 						</li>
-					</value>
-				</li>-->
-				<!--Make Gamma plants darklight so they can enjoy their own biome-->
-				<!--<li Class="PatchOperationReplace">
-					<xpath>/Defs/ThingDef[defName="AB_GiantGamma"]/comps/li[@Class="CompProperties_Glower"]/glowColor</xpath>
-					<value>
-						<glowColor>(78, 226, 229, 0)</glowColor>
 					</value>
 				</li>-->
 			</operations>

@@ -3,7 +3,7 @@
 	<ThingDef ParentName="PlantBase">
 		<defName>FOF_PlantUltraviolett</defName>
 		<label>ultraviolett plant</label>
-		<description>A small alien plant with an unique pollen. It reacts with the nervesystem on contact and makes humanoids feel comfortable and chilled. It can be very dangerous to smaller fauna tho, since it lures its victims into its net, should it ever miss any nutrients. This plant grows slowly, but can do so even outside the ideal temperature range. It will still die in freezing conditions.</description>
+		<description>A small alien plant with an unique pollen. It reacts with the nervesystem on contact and makes humanoids feel comfortable and chilled. It can be very dangerous to smaller fauna tho, since it lures its victims into its net, should it ever miss any nutrients. This plant grows slowly, but can do so even outside the ideal temperature range. It will still die in freezing conditions. Only colonists with the Forsaken Knowledge gene will be able to sow this plant.</description>
 		<thingClass>ForsakenFaction.Ultraviolett</thingClass>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
