@@ -43,7 +43,6 @@
 			</thingDefs>
 		</apparelStuffFilter>
 	</FactionDef>
-
 	<!-- npc faction -->
 	<FactionDef ParentName="FactionBase">
 		<defName>Forsaken</defName>
@@ -107,15 +106,15 @@
 		</backstoryFilters>
 		<caravanTraderKinds>
 			<li>Caravan_Outlander_BulkGoods</li>
-			<li>Caravan_Outlander_CombatSupplier</li>
+			<li>Caravan_Forsaken_CombatSupplier</li>
 			<li>Caravan_Outlander_Exotic</li>
-			<li>Caravan_Outlander_PirateMerchant</li>
+			<li>Caravan_Forsaken_PirateMerchant</li>
 		</caravanTraderKinds>
 		<visitorTraderKinds>
 			<li>Visitor_Outlander_Standard</li>
 		</visitorTraderKinds>
 		<baseTraderKinds>
-			<li>Base_Outlander_Standard</li>
+			<li>Base_Forsaken_Standard</li>
 		</baseTraderKinds>
 		<allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
 		<maxPawnCostPerTotalPointsCurve>
@@ -175,6 +174,7 @@
 			<li>
 				<kindDef>Settlement</kindDef>
 				<options>
+					<FOF_Town_Guard>10</FOF_Town_Guard>
 					<FOF_ForsakenSlasher>10</FOF_ForsakenSlasher>
 					<FOF_ForsakenGunner>10</FOF_ForsakenGunner>
 					<FOF_KingOfTheLostOnes>1.5</FOF_KingOfTheLostOnes>
@@ -213,5 +213,4 @@
 		<maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
 		<configurationListOrderPriority>30</configurationListOrderPriority>
 	</FactionDef>
-
 </Defs>

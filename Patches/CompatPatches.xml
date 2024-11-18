@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+	<!-- Fixing Forsaken gear's categorization -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[@Name="AG_BaseForsaken"]/thingCategories</xpath>
+		<value>
+			<thingCategories>
+			<li>FOF_ForsakenWeapons</li>
+		</thingCategories>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[@Name="AG_BaseForsaken"]/tradeability</xpath>
+		<value>
+			<tradeability>All</tradeability>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[@Name="AG_ArmorBaseForsaken"]/thingCategories</xpath>
+	</Operation>
+	<!-- Adding trade tags to Forsaken gear -->
+	<!--<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[
+			defName="AG_ForsakenSniper" or
+			defName="AG_ForsakenShotgun" or
+			defName="AG_ForsakenAssaultRifle" or
+			defName="AG_ForsakenLongBlade" or
+			defName="AG_ForsakenBattleAxe" or
+			defName="AG_ForsakenBulkSword" or
+			defName="AG_ForsakenSpear" or
+			defName="AG_ForsakenBow"
+		]</xpath>
+		<value>
+			<tradeTags>
+				<li>ForsakenWeapons</li>
+			</tradeTags>
+		</value>
+	</Operation>-->
+	<!--<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[
+			defName="AG_Forsaken_Hood" or
+			defName="AG_ForsakenCloak" or
+			defName="AG_ForsakenMarineHelmet" or
+			defName="AG_ForsakenMarineHelmetPsy" or
+			defName="AG_ForsakenMarineArmor"
+		]</xpath>
+		<value>
+			<tradeTags>
+				<li>ForsakenGear</li>
+			</tradeTags>
+		</value>
+	</Operation>-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="AG_BaseForsaken"]</xpath>
+		<value>
+			<tradeTags>
+				<li>ForsakenWeapons</li>
+			</tradeTags>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="AG_ArmorBaseForsaken"]</xpath>
+		<value>
+			<tradeTags>
+				<li>ForsakenGear</li>
+			</tradeTags>
+		</value>
+	</Operation>
 	<!-- Alpha Genes scenario faction patch -->
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ScenarioDef[defName="AG_ForsakenCrashlanded"]/scenario/playerFaction/factionDef</xpath>
