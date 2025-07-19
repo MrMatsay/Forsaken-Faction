@@ -18,14 +18,13 @@ namespace ForsakenFaction
     }
 
     //---------- PLANT UTILITY PATCHES ----------//
-    [HarmonyPatch(typeof(PlantUtility), "GrowthSeasonNow", 0)]
+    [HarmonyPatch(typeof(PlantUtility), "GrowthSeasonNow", new Type[] { typeof(IntVec3), typeof(Map), typeof(ThingDef) })]
     public static class FOF_GrowthSeasonNow_Postfix
     {
         [HarmonyPostfix]
-        public static void Postfix(IntVec3 c, Map map, ref bool __result)
+        public static void Postfix(IntVec3 c, Map map, ThingDef plantDef, ref bool __result)
         {
-            Plant plant = c.GetPlant(map);
-            string str = plant?.def?.defName;
+            string str = plantDef?.defName;
             if (str == "FOF_PlantUltraviolett")
             {
                 __result = true;
@@ -53,8 +52,6 @@ namespace ForsakenFaction
                     __result = false;
                 }
             }
-
-
         }
     }
     [HarmonyPatch(typeof(Bill), "PawnAllowedToStartAnew")]
@@ -118,8 +115,6 @@ namespace ForsakenFaction
             {
                 __result = false;
             }
-
         }
     }
-
 }

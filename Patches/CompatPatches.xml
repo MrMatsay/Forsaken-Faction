@@ -15,9 +15,9 @@
 			<tradeability>All</tradeability>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationRemove">
+	<!--<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/ThingDef[@Name="AG_ArmorBaseForsaken"]/thingCategories</xpath>
-	</Operation>
+	</Operation>-->
 	<!-- Adding trade tags to Forsaken gear -->
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[@Name="AG_BaseForsaken"]</xpath>
