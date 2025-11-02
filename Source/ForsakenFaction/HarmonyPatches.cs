@@ -79,7 +79,7 @@ namespace ForsakenFaction
         {
             if (__result)
             {
-                ForsakenKnowledgeExtension extension = t.def.entityDefToBuild.GetModExtension<ForsakenKnowledgeExtension>();
+                ForsakenKnowledgeExtension extension = t?.def?.entityDefToBuild?.GetModExtension<ForsakenKnowledgeExtension>();
                 if (extension != null && !extension.CanDo(p))
                 {
                     if (jobForReservation != null)
