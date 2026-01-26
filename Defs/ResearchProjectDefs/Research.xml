@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ResearchTabDef>
+		<defName>Forsakens</defName>
+		<label>Forsakens</label>
+	</ResearchTabDef>
+	<ResearchProjectDef>
+		<defName>FOF_Plants</defName>
+		<label>forsakens plants</label>
+		<tab>Forsakens</tab>
+		<techLevel>Medieval</techLevel>
+		<description>Learn to sow Forsaken plants.</description>
+		<baseCost>900</baseCost>
+		<researchViewX>1</researchViewX>
+		<researchViewY>2</researchViewY>
+	</ResearchProjectDef>
+	<ResearchProjectDef>
+		<defName>FOF_Drugs</defName>
+		<label>forsakens drugs</label>
+		<tab>Forsakens</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Learn to produce Forsaken combat-enhancing drugs.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+			<li>DrugProduction</li>
+			<li>FOF_Plants</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>2</researchViewY>
+	</ResearchProjectDef>
+</Defs>

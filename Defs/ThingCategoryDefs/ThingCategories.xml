@@ -6,4 +6,10 @@
 		<parent>Weapons</parent>
 		<iconPath>Things/Item/Weapon/AG_ForsakenAssaultRifle/AG_ForsakenAssaultRifle</iconPath>
 	</ThingCategoryDef>
+	<ThingCategoryDef>
+		<defName>FOF_Hidden</defName>
+		<label>hidden</label>
+		<parent>Root</parent>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+	</ThingCategoryDef>
 </Defs>

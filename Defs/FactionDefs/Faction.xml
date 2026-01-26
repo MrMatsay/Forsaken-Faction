@@ -42,6 +42,18 @@
 				<li>AG_Ultima</li>
 			</thingDefs>
 		</apparelStuffFilter>
+		<modExtensions>
+			<li Class="VEF.Factions.FactionDefExtension">
+				<startingGoodwillByFactionDefs>
+					<Forsaken>10~20</Forsaken>
+				</startingGoodwillByFactionDefs>
+			</li>
+			<li Class="ForsakenFaction.FactionGoodwillExtension">
+				<ignoreNaturalEnemy>
+					<li>Forsaken</li>
+				</ignoreNaturalEnemy>
+			</li>
+		</modExtensions>
 	</FactionDef>
 	<!-- npc faction -->
 	<FactionDef ParentName="FactionBase">
@@ -212,5 +224,12 @@
 		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
 		<maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
 		<configurationListOrderPriority>30</configurationListOrderPriority>
+		<modExtensions>
+			<li Class="VEF.Factions.FactionDefExtension">
+				<startingGoodwillByFactionDefs>
+					<ForsakenPlayerColony>10~20</ForsakenPlayerColony>
+				</startingGoodwillByFactionDefs>
+			</li>
+		</modExtensions>
 	</FactionDef>
 </Defs>

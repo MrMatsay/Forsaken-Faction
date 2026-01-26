@@ -14,12 +14,14 @@ namespace ForsakenFaction
         {
             var harmony = new Harmony("ForsakenFaction");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+            var original = AccessTools.Method(typeof(WorkGiver_GrowerSow), "ExtraRequirements");
+            harmony.Unpatch(original, HarmonyPatchType.Postfix, "com.alphagenes");
         }
     }
 
     //---------- PLANT UTILITY PATCHES ----------//
     [HarmonyPatch(typeof(PlantUtility), "GrowthSeasonNow", new Type[] { typeof(IntVec3), typeof(Map), typeof(ThingDef) })]
-    public static class FOF_GrowthSeasonNow_Postfix
+    public static class FOF_GrowthSeasonNow_Patch
     {
         [HarmonyPostfix]
         public static void Postfix(IntVec3 c, Map map, ThingDef plantDef, ref bool __result)
@@ -37,25 +39,8 @@ namespace ForsakenFaction
     }
 
     //---------- GENE LOCKING PATCHES ----------//
-    [HarmonyPatch(typeof(EquipmentUtility), "CanEquip", new Type[] { typeof(Thing), typeof(Pawn), typeof(string), typeof(bool) }, new ArgumentType[] { 0, 0, ArgumentType.Out, 0 })]
-    public static class FOF_CanEquip_Postfix
-    {
-        [HarmonyPostfix]
-        public static void PostFix(ref bool __result, Thing thing, Pawn pawn, ref string cantReason)
-        {
-            if (__result)
-            {
-                ForsakenKnowledgeExtension extension = thing.def.GetModExtension<ForsakenKnowledgeExtension>();
-                if (extension != null && !extension.CanDo(pawn))
-                {
-                    cantReason = "AG_NeedsForsakenKnowledgeToWield".Translate();
-                    __result = false;
-                }
-            }
-        }
-    }
     [HarmonyPatch(typeof(Bill), "PawnAllowedToStartAnew")]
-    public class FOF_PawnAllowedToStartBill_Postfix
+    public static class FOF_PawnAllowedToStartBill_Patch
     {
         [HarmonyPostfix]
         public static void Postfix(ref bool __result, Bill __instance, Pawn p)
@@ -65,56 +50,24 @@ namespace ForsakenFaction
                 ForsakenKnowledgeExtension extension = __instance.recipe.GetModExtension<ForsakenKnowledgeExtension>() ?? __instance.recipe.ProducedThingDef?.GetModExtension<ForsakenKnowledgeExtension>();
                 if (extension != null && !extension.CanDo(p))
                 {
-                    JobFailReason.Is("AG_NeedsForsakenKnowledge".Translate());
+                    JobFailReason.Is("FOF_NeedsForsakenKnowledge".Translate());
                     __result = false;
                 }
             }
         }
     }
-    [HarmonyPatch(typeof(GenConstruct), nameof(GenConstruct.CanConstruct), new Type[] { typeof(Thing), typeof(Pawn), typeof(bool), typeof(bool), typeof(JobDef) })]
-    public class FOF_CanConstruct_Postfix
+
+    //---------- FACTION GOODWILL PATCHES ----------//
+    [HarmonyPatch(typeof(GoodwillSituationWorker_NaturalEnemy), "GetNaturalGoodwillOffset")]
+    public static class FOF_GetNaturalGoodwill_Patch
     {
         [HarmonyPostfix]
-        public static bool Postfix(bool __result, Thing t, Pawn p, JobDef jobForReservation)
+        public static void Postfix(ref int __result, Faction other)
         {
-            if (__result)
-            {
-                ForsakenKnowledgeExtension extension = t?.def?.entityDefToBuild?.GetModExtension<ForsakenKnowledgeExtension>();
-                if (extension != null && !extension.CanDo(p))
-                {
-                    if (jobForReservation != null)
-                    {
-                        JobFailReason.Is("AG_NeedsForsakenKnowledge".Translate());
-                    }
-                    __result = false;
-                }
-            }
-            return __result;
-        }
-    }
-    [HarmonyPatch(typeof(WorkGiver_GrowerSow), "ExtraRequirements")]
-    public static class FOF_GrowerSow_ExtraRequirements_Postfix
-    {
-        [HarmonyPostfix]
-        public static void PostFix(ref bool __result, IPlantToGrowSettable settable, Pawn pawn)
-        {
-            IntVec3 c;
-            if (settable is Zone_Growing zone_Growing)
-            {
-                c = zone_Growing.Cells[0];
-            }
-            else
-            {
-                c = ((Thing)settable).Position;
-            }
-
-            ThingDef wantedPlantDef = WorkGiver_Grower.CalculateWantedPlantDef(c, pawn.Map);
-            ForsakenKnowledgeExtension extension = wantedPlantDef.GetModExtension<ForsakenKnowledgeExtension>();
-
-            if (extension != null && !extension.CanDo(pawn))
-            {
-                __result = false;
-            }
+            Faction ofPlayer = Find.FactionManager.OfPlayer;
+            FactionGoodwillExtension extension = ofPlayer.def.GetModExtension<FactionGoodwillExtension>();
+            if (extension != null && extension.ignoreNaturalEnemy.Contains(other.def))
+                __result = 0;
         }
     }
 }

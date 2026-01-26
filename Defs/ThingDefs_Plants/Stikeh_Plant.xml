@@ -54,9 +54,9 @@
 		<selectable>true</selectable>
 		<pathCost>10</pathCost>
 		<plant>
-			<!--<sowResearchPrerequisites>
-				<li>FO_Plants</li>
-			</sowResearchPrerequisites>-->
+			<sowResearchPrerequisites>
+				<li>FOF_Plants</li>
+			</sowResearchPrerequisites>
 			<fertilitySensitivity>0.4</fertilitySensitivity>
 			<dieIfLeafless>true</dieIfLeafless>
 			<harvestTag>Standard</harvestTag>
@@ -77,8 +77,6 @@
 				<glowColor>(255, 230, 92)</glowColor>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="ForsakenFaction.ForsakenKnowledgeExtension"/>
-		</modExtensions>
+		<modExtensions/>
 	</ThingDef>
 </Defs>

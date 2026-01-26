@@ -15,9 +15,6 @@
 			<tradeability>All</tradeability>
 		</value>
 	</Operation>
-	<!--<Operation Class="PatchOperationRemove">
-		<xpath>/Defs/ThingDef[@Name="AG_ArmorBaseForsaken"]/thingCategories</xpath>
-	</Operation>-->
 	<!-- Adding trade tags to Forsaken gear -->
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[@Name="AG_BaseForsaken"]</xpath>
@@ -40,6 +37,15 @@
 		<xpath>/Defs/ScenarioDef[defName="AG_ForsakenCrashlanded"]/scenario/playerFaction/factionDef</xpath>
 		<value>
 			<factionDef>ForsakenPlayerColony</factionDef>
+		</value>
+	</Operation>
+	<!-- Research locking Forsaken plants -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="AG_Septimum" or defName="AG_Gamma" or defName="AG_DarkGamma"]/plant</xpath>
+		<value>
+			<sowResearchPrerequisites>
+				<li>FOF_Plants</li>
+			</sowResearchPrerequisites>
 		</value>
 	</Operation>
 	<!-- Royalty compat patch -->
@@ -69,10 +75,37 @@
 						<harvestedThingDef>RagadastFruit</harvestedThingDef>
 					</value>
 				</li>
-				<!-- Remove Alpha Biomes' version to avoid duplicates -->
-				<li Class="PatchOperationRemove">
+				<!-- Hide Alpha Biomes' version to avoid duplicates -->
+				<li Class="PatchOperationReplace">
 					<xpath>/Defs/ThingDef[defName="AB_RawRagadast"]</xpath>
+					<value>
+						<ThingDef>
+							<defName>AB_RawRagadast</defName>
+							<label>ragadast</label>
+							<description>Raw ragadast berries.</description>
+							<thingClass>ThingWithComps</thingClass>
+							<category>None</category>
+							<drawerType>MapMeshOnly</drawerType>
+							<resourceReadoutPriority>Middle</resourceReadoutPriority>
+							<useHitPoints>true</useHitPoints>
+							<selectable>true</selectable>
+							<altitudeLayer>Item</altitudeLayer>
+							<statBases/>
+							<comps/>
+						</ThingDef>
+					</value>
 				</li>
+				<!--<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="AB_RawRagadast"]</xpath>
+					<attribute>ParentName</attribute>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="AB_RawRagadast"]</xpath>
+					<value>
+						<category Inherit="False">None</category>
+						 <thingCategories Inherit="False"><li>FOF_Hidden</li></thingCategories> 
+					</value>
+				</li>-->
 				<!-- Restrict the Forsaken faction to lore-appropriate biomes -->
 				<!--<li Class="PatchOperationAddModExtension">
 					<xpath>/Defs/FactionDef[defName = "Forsaken"]</xpath>

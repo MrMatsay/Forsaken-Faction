@@ -33,7 +33,7 @@
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
-			<researchPrerequisite>MedicineProduction</researchPrerequisite>
+			<researchPrerequisite>FOF_Drugs</researchPrerequisite>
 			<recipeUsers>
 				<li>DrugLab</li>
 			</recipeUsers>

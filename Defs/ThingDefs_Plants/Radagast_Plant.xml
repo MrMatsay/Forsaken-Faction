@@ -19,9 +19,9 @@
 		<pathCost>10</pathCost>
 		<ingestible/>
 		<plant>
-			<!--<sowResearchPrerequisites>
-				<li>FO_Plants</li>
-			</sowResearchPrerequisites>-->
+			<sowResearchPrerequisites>
+				<li>FOF_Plants</li>
+			</sowResearchPrerequisites>
 			<growDays>12</growDays>
 			<harvestTag>Standard</harvestTag>
 			<harvestedThingDef>RagadastFruit</harvestedThingDef>
@@ -41,8 +41,6 @@
 			<purpose>Food</purpose>
 			<humanFoodPlant>true</humanFoodPlant>
 		</plant>
-		<modExtensions>
-			<li Class="ForsakenFaction.ForsakenKnowledgeExtension"/>
-		</modExtensions>
+		<modExtensions/>
 	</ThingDef>
 </Defs>
