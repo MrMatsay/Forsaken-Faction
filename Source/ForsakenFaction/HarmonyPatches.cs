@@ -27,11 +27,11 @@ namespace ForsakenFaction
         public static void Postfix(IntVec3 c, Map map, ThingDef plantDef, ref bool __result)
         {
             string str = plantDef?.defName;
-            if (str == "FOF_PlantUltraviolett")
+            if (str != null && str == "FOF_PlantUltraviolett")
             {
                 __result = true;
             }
-            else if ((c.GetZone(map) is Zone_Growing zone_Growing) && zone_Growing.GetPlantDefToGrow().defName == "FOF_PlantUltraviolett")
+            else if ((c.GetZone(map) is Zone_Growing zone_Growing) && zone_Growing.GetPlantDefToGrow()?.defName == "FOF_PlantUltraviolett")
             {
                 __result = true;
             }
